@@ -144,7 +144,7 @@ function MoversReg() {
                   </div>
                   <div className="col-6">
                     <input
-                      type="number"
+                      type="text"
                       className="form-control bg-light border-0 px-4"
                       placeholder="Contact"
                       style={{ height: "55px" }}

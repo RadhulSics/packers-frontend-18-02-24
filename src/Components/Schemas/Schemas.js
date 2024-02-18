@@ -17,7 +17,7 @@ export const packersRegSchema  = yup.object().shape({
 export const moversRegSchema  = yup.object().shape({
     name: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
     regno: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
-    aadhar: yup.number().min(12,"Phone number must be a 10 digit number").positive().integer().required("Required"),
+    aadhar: yup.string().min(12,"Aadhaar number must be a 12 digit number")().required("Required"),
     // godown: yup.string().required("Required"),
     password: yup.string().min(5,"1 uppercase, 1 number, 1 symbol").max(16).matches(passwordRule,"1 uppercase, 1 number, 1 symbol").required("Required"),
     // area: yup.string().required("Required")     

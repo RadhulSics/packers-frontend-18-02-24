@@ -103,53 +103,8 @@ export default App;
 
 
 
-// import "./App.css";
-// import Footer from "./Components/Footer/Footer";
-// import {BrowserRouter,Routes,Route} from "react-router-dom"
-// import Home from "./Components/Home/Home";
-// import PackersLogin from "./Components/PackersLogin/PackersLogin";
-// import MoversLogin from "./Components/MoversLogin/MoversLogin";
-// import PackersReg from "./Components/PackersReg/PackersReg";
-// import MoversReg from "./Components/MoversReg/MoversReg";
-// import AdminPanel from "./Components/AdminPanel/AdminPanel";
-// import AdminPackers from "./Components/AdminPackers/AdminPackers";
-// import AboutCAll from "./Components/AboutCall/AboutCAll";
-// import ServiceCall from "./Components/ServiceCall/ServiceCall";
-// import PackersHome from "./Components/PackersHome/PackersHome";
-// import PackersProfile from "./Components/PackersProfile/PackersProfile";
-// import { useState,createContext } from "react";
-// import { ResponseContext } from "./Components/Context/Context";
 
 
-// export const ResponseContext = createContext(null);
 
-
-// function App() {
-//   const [response, setResponse] = useState(null);
-//   return (
-//     <ResponseContext.Provider value={response}>
-//     <BrowserRouter>
-//       <div className="App">
-//         <Routes>
-//           <Route path="/" element={<Home/>}/>
-//           <Route path="/about" element={<AboutCAll/>}/>
-//           <Route path="/services" element={<ServiceCall/>}/>
-//           <Route path="/packers-login" element={<PackersLogin setResponse={setResponse} />}/>
-//           <Route path="/packers-reg" element={<PackersReg/>}/>
-//           <Route path="/movers-login" element={<MoversLogin/>}/>
-//           <Route path="/movers-reg" element={<MoversReg/>}/>
-//           <Route path="/admin" element={<AdminPanel/>}/>
-//           <Route path="/admin-packers" element={<AdminPackers/>}/>
-//           <Route path="/packers-home" element={<PackersHome/>}/>
-//           <Route path="/packers-profile" element={<PackersProfile/>}/>
-//         </Routes>
-//       </div>
-//       <Footer />
-//     </BrowserRouter>
-//     </ResponseContext.Provider>
-//   );
-// }
-
-// export default App;
 
 

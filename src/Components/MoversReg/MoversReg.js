@@ -186,8 +186,8 @@ function MoversReg() {
         if(res.data.status==200){
           toast.success('Movers signup completed')
           localStorage.setItem('moversId',res.data.data._id)
-          navigate('/movers-login')
-        }else if(res.data.status==400){
+          navigate('/movers-details')
+        }else if(res.data.status==401){
           toast.error(res.data.msg)
         }
         else{
@@ -341,7 +341,7 @@ function MoversReg() {
                   </div>
                   <div className="col-6" style={{ marginBottom: "1rem" }}>
                     <input
-                      type="number"
+                      type="text"
                       className="form-control bg-light border-0 px-4"
                       placeholder="Aadhar number of owner"
                       style={{ height: "55px" }}

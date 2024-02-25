@@ -95,14 +95,14 @@ function MoversProfile() {
                       <p>{value.regno}</p>
                     </div>
                   </div>
-                  <div className="row">
+                  {/* <div className="row">
                     <div className="col-md-6">
                       <label>Aadhaar Number</label>
                     </div>
                     <div className="col-md-6">
                       <p>{value.aadhar}</p>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="row">
                     <div className="col-md-6">
                       <label>Contact</label>
@@ -119,7 +119,7 @@ function MoversProfile() {
                       <p>{packer.gender ? packer.gender : " - "}</p>
                     </div>
                   </div> */}
-                  <div className="row">
+                  {/* <div className="row">
                     <div className="col-md-6">
                       <label>City</label>
                     </div>
@@ -142,7 +142,7 @@ function MoversProfile() {
                     <div className="col-md-6">
                       <p>{value.pincode}</p>
                     </div>
-                  </div>
+                  </div> */}
               </div>
                
             </div>

@@ -43,7 +43,7 @@ function MoversNav() {
                 </Link>
               </div>
             </div>
-            <div className="nav-item dropdown">
+            {/* <div className="nav-item dropdown">
               <Link
                 href=""
                 class="nav-link dropdown-toggle"
@@ -59,11 +59,11 @@ function MoversNav() {
                   View Drivers
                 </Link>
               </div>
-            </div>
+            </div> */}
             
-            {/* <Link to="/movers-view-complaints" className="nav-item nav-link ">
+            <Link to="/movers-view-complaints" className="nav-item nav-link ">
               Complaints
-            </Link> */}
+            </Link>
             <Link to="/movers-profile" className="nav-item nav-link ">
               Profile
             </Link>

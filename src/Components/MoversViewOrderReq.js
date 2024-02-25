@@ -61,10 +61,8 @@ function MoversViewOrderReq() {
                               {a.time}
                             </small>
                           </div>
-                          {/* <h5 class="text-uppercase m-2 mb-3">{a.name}</h5>
-                  <p class="m-2" style={{fontSize:'large'}}>
-                    City : {a.city}<br />District : {a.district}<br />
-                  </p> */}
+                          <h5 class="text-uppercase m-2 mb-3">{a.fromcity} - to - {a.tocity}</h5>
+
                           <div class="d-flex mb-3 m-2 justify-content-between">
                             <div>
                               <h6>
@@ -83,6 +81,7 @@ function MoversViewOrderReq() {
                               </h6>
                             </div>
                           </div>
+                          
                           <div class="d-flex mb-3 m-2 justify-content-between">
                             <div>House Type : {a.type}</div>
                             <div>Total distance : {a.distance} Km</div>

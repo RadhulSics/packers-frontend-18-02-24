@@ -166,17 +166,17 @@ function PackersReg() {
       pincode: selectedCityPincode,
     };
 
-    const passwordRule = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    // const passwordRule = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
-    if (updatedValues.contact.toString().length !== 10) {
-      toast.warning("Please ensure all mandatory fields are filled correctly.");
-      return;
-      }
+    // if (updatedValues.contact.toString().length !== 10) {
+    //   toast.warning("Please ensure all mandatory fields are filled correctly.");
+    //   return;
+    //   }
       
-      if (!passwordRule.test(updatedValues.password)) {
-        toast.warning("Please ensure all mandatory fields are filled correctly.");
-        return;
-      }
+    //   if (!passwordRule.test(updatedValues.password)) {
+    //     toast.warning("Please ensure all mandatory fields are filled correctly.");
+    //     return;
+    //   }
 
 
     axiosInstance
@@ -240,12 +240,9 @@ function PackersReg() {
     setSelectedCityPincode(selectedCityData.pincode);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    onSubmit();
-  };
 
-  const { values, errors, touched, handleBlur, handleChange,  } =
+
+  const { values, errors, touched, handleBlur, handleChange,handleSubmit  } =
     useFormik({
       initialValues: {
         name: "",
@@ -291,7 +288,7 @@ function PackersReg() {
               </div>
             </div>
             <div className="col-lg-7" style={{ paddingTop: "2rem" }}>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={(e)=>{handleSubmit(e)}}>
                 <div className="row g-3">
                   <div className="col-6">
                     <input
@@ -354,21 +351,7 @@ function PackersReg() {
                       <p className="error">{errors.contact}</p>
                     )}
                   </div>
-                  <div className="col-6" style={{ marginBottom: "1rem" }}>
-                    <input
-                      type="password"
-                      className="form-control bg-light border-0 px-4"
-                      placeholder="Password"
-                      style={{ height: "55px" }}
-                      value={values.password}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      id="password"
-                    />
-                    {errors.password && touched.password && (
-                      <p className="error">{errors.password}</p>
-                    )}
-                  </div>
+                  
                  
 
                   <div className="col-6">
@@ -381,6 +364,9 @@ function PackersReg() {
                         </option>
                       ))}
                     </select>
+                    {/* {errors.district && touched.district && (
+                      <p className="error">{errors.district}</p>
+                    )} */}
                   </div>
                   <div className="col-6">
                     {/* <input type='text' className="form-control bg-light border-0 px-4 py-3" placeholder="District" style={{height:'55px'}} value={values.district} onChange={handleChange} onBlur={handleBlur} id='district'/>
@@ -395,7 +381,7 @@ function PackersReg() {
                           );
                         })
                       ) : (
-                        <option>Select District</option>
+                        <option>Select City</option>
                       )}
                     </select>
                   </div>
@@ -412,6 +398,21 @@ function PackersReg() {
                       id="pincode"
                       disabled
                     />
+                  </div>
+                  <div className="col-6" style={{ marginBottom: "1rem" }}>
+                    <input
+                      type="password"
+                      className="form-control bg-light border-0 px-4"
+                      placeholder="Password"
+                      style={{ height: "55px" }}
+                      value={values.password}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      id="password"
+                    />
+                    {errors.password && touched.password && (
+                      <p className="error">{errors.password}</p>
+                    )}
                   </div>
                   <div className="col-12">
                     <button

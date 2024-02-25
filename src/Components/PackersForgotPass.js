@@ -61,7 +61,7 @@ function PackersForgotPass() {
                     </div>
                 </div>
                 <div className="col-lg-7" style={{paddingTop:'2rem'}}>
-                <form onSubmit={onSubmit} >
+                <form onSubmit={(e)=>{handleSubmit(e)}} >
                         <div className="row g-3">
                             
                             <div className="col-12" style={{marginBottom:'1rem'}} >

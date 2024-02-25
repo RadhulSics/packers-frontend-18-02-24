@@ -36,9 +36,9 @@ function Sidebar() {
               Mover Requests
             </Link>
            
-            {/* <Link to="/admin-view-complaints" className="nav-item nav-link">
+            <Link to="/admin-view-complaints" className="nav-item nav-link">
               Complaints
-            </Link> */}
+            </Link>
             <Link to="/" className="nav-item nav-link">
               Logout
             </Link>

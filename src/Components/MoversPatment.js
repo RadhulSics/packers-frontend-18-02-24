@@ -120,7 +120,7 @@ function MoversPatment() {
                       Pay
                     </button>
                   </form> */}
-                  <form onSubmit={onSubmit}>
+                  <form onSubmit={(e)=>{handleSubmit(e)}}>
                   <div class="row g-3">
                   <h2>Total Amount : {bookingDetails.rate}</h2>
                     <div class="col-md-6">

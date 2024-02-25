@@ -57,13 +57,13 @@ function MoversAddDetails() {
                         <div className="row g-3">
                             
                             <div className="col-6" style={{marginBottom:'1rem'}} >
-                                <input type="text" className="form-control bg-light border-0 px-4" placeholder="Charge per KM" style={{height:'55px'}} value={ratePerKm} onChange={(e)=>{setkmCharge(e.target.value)}} />
+                                <input type="text" className="form-control bg-light border-0 px-4" placeholder="Charge per KM" style={{height:'55px'}} value={ratePerKm} onChange={(e)=>{setkmCharge(e.target.value)}} required />
                             </div>
                             <div className="col-6" style={{marginBottom:'1rem'}}>
-                                <input type="text" className="form-control bg-light border-0 px-4" placeholder="Charge per KG" style={{height:'55px'}} value={ratePerKg} onChange={(e)=>{setkgcharge(e.target.value)}} />
+                                <input type="text" className="form-control bg-light border-0 px-4" placeholder="Charge per KG" style={{height:'55px'}} value={ratePerKg} onChange={(e)=>{setkgcharge(e.target.value)}} required/>
                             </div>
                             <div className="col-12" style={{marginBottom:'1rem'}}>
-                                <input type="text" className="form-control bg-light border-0 px-4" placeholder="Min charge per KM" style={{height:'55px'}} value={minRate} onChange={(e)=>{setmincharge(e.target.value)}} />
+                                <input type="text" className="form-control bg-light border-0 px-4" placeholder="Min charge per KM" style={{height:'55px'}} value={minRate} onChange={(e)=>{setmincharge(e.target.value)}} required/>
                             </div>
                             <div className="col-12" style={{marginBottom:'1rem'}}>
                             <textarea className="form-control bg-light border-0 px-4" rows="4" cols="50" placeholder="Comments"  value={comments} onChange={(e)=>{setcomments(e.target.value)}} />

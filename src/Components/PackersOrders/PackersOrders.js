@@ -21,15 +21,16 @@ function PackersOrders() {
   }, []);
 
   const handleRemove = (id) => {
-    axiosInstance.post(`/deleteOrderById/${id}`)
+    axiosInstance
+      .post(`/deleteOrderById/${id}`)
       .then((res) => {
         console.log(res);
-        if(res.data.status==200){
-            alert('Removed')
-            setValue(prevArray => prevArray.filter(item => item._id !== id));
-            // window.location.reload()
-        }else{
-            // alert.warning('Employee Already Exist')
+        if (res.data.status == 200) {
+          alert("Removed");
+          setValue((prevArray) => prevArray.filter((item) => item._id !== id));
+          // window.location.reload()
+        } else {
+          // alert.warning('Employee Already Exist')
         }
       })
       .catch((err) => {
@@ -60,10 +61,8 @@ function PackersOrders() {
                               {a.time}
                             </small>
                           </div>
-                          {/* <h5 class="text-uppercase m-2 mb-3">{a.name}</h5>
-                  <p class="m-2" style={{fontSize:'large'}}>
-                    City : {a.city}<br />District : {a.district}<br />
-                  </p> */}
+                          <h5 class="text-uppercase m-2 mb-3">{a.fromcity} - to - {a.tocity}</h5>
+                          
                           <div class="d-flex mb-3 m-2 justify-content-between">
                             <div>
                               <h6>
@@ -83,6 +82,11 @@ function PackersOrders() {
                             </div>
                           </div>
                           <div class="d-flex mb-3 m-2 justify-content-between">
+                            <div>
+                              Company Name : <b>{a.mid.name}</b>
+                            </div>
+                          </div>
+                          <div class="d-flex mb-3 m-2 justify-content-between">
                             <div>House Type : {a.type}</div>
                             <div>Total distance : {a.distance} Km</div>
                           </div>
@@ -92,42 +96,61 @@ function PackersOrders() {
                             <div>Weight - {a.weight} Kg</div>
                           </div>
                           <div class="d-flex mb-3 m-2 justify-content-between">
-
-                          <div>
-                            Godown Days - {a.godownDays}
-                          </div>
-                          <div>Vehicle status - {a.vehicle==true?'Yes':'No'}</div>
+                            <div>Godown Days - {a.godownDays}</div>
+                            <div>
+                              Vehicle status -{" "}
+                              {a.vehicle == true ? "Yes" : "No"}
+                            </div>
                           </div>
                           <div class="d-flex mb-3 m-2 justify-content-between">
-
-                          <div>
-                            {a.status?`Current Status - ${a.status}`:''}
-                          </div>
-                          <div>
-                          {a.loc?`Current Status - ${a.loc}`:''}
-                            
+                            <div>
+                              {a.status ? `Current Status - ${a.status}` : ""}
+                            </div>
+                            <div>
+                              {a.loc ? `Current Status - ${a.loc}` : ""}
                             </div>
                           </div>
 
                           <div class="d-flex mb-3 m-2 justify-content-between">
-
-                          <div>
-                            <h4 class='text-success'>Amount - {a.rate}</h4>
+                            <div>
+                              <h4 class="text-success">Amount - {a.rate}</h4>
+                            </div>
                           </div>
+
+                          <div class="d-flex justify-content-between">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              onClick={() => handleRemove(a._id)}
+                            >
+                              Cancel
+                            </button>
+
+                            {/* {a.status=='pending'?'':<Link to={`/packers-track-order/${a._id}`} ><button type="button" class="btn btn-success" >Track Order</button></Link>}  */}
                           </div>
-
-                          {/* <div class="d-flex justify-content-between">
-                            <button type="button" class="btn btn-danger" onClick={() => handleRemove(a._id)} >Cancel</button>
-                           
-                            {a.status=='pending'?'':<Link to={`/packers-track-order/${a._id}`} ><button type="button" class="btn btn-success" >Track Order</button></Link>} 
-
-                          </div> */}
-                          <hr/>
-                          {/* <div class="d-flex justify-content-between">
-                            {a.status=='pending'?'':<span>Share your feedback with us. <Link to={`/packer_add_complaint/${a.mid}`}  >Share now.</Link></span>}
-                            {a.status=='pending'?'':<span>Rate your experience with us. <Link to={`/packer_add_review/${a.mid}`} >Rate now</Link></span>}
-
-                          </div> */}
+                          <hr />
+                          <div class="d-flex justify-content-between">
+                            {a.status == "pending" ? (
+                              ""
+                            ) : (
+                              <span>
+                                Share your feedback with us.{" "}
+                                <Link to={`/packer_add_complaint/${a.mid}`}>
+                                  Share now.
+                                </Link>
+                              </span>
+                            )}
+                            {a.status == "pending" ? (
+                              ""
+                            ) : (
+                              <span>
+                                Rate your experience with us.{" "}
+                                <Link to={`/packer_add_review/${a.mid}`}>
+                                  Rate now
+                                </Link>
+                              </span>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>

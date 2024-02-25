@@ -168,17 +168,7 @@ function MoversReg() {
       pincode: selectedCityPincode,
     };
 
-    const passwordRule = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-
-    if (updatedValues.contact.toString().length !== 10) {
-      toast.warning("Please ensure all mandatory fields are filled correctly.");
-      return;
-      }
-      
-      if (!passwordRule.test(updatedValues.password)) {
-        toast.warning("Please ensure all mandatory fields are filled correctly.");
-        return;
-      }
+    
     
       axiosInstance.post('/registerMover',updatedValues)
       .then((res)=>{
@@ -242,12 +232,9 @@ function MoversReg() {
     setSelectedCityPincode(selectedCityData.pincode);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    onSubmit();
-  };
 
-  const { values, errors, touched, handleBlur, handleChange } =
+
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
         name:'',
@@ -292,7 +279,7 @@ function MoversReg() {
               </div>
             </div>
             <div className="col-lg-7" style={{ paddingTop: "2rem" }}>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={(e)=>{handleSubmit(e)}}>
                 <div className="row g-3">
                   <div className="col-12">
                     <input

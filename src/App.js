@@ -40,6 +40,10 @@ import MoverEditDriver from "./Components/MoverEditDriver";
 import MoverViewAndTrackOrder from "./Components/MoverViewAndTrackOrder";
 import MoversNav from "./Components/MoversNav";
 import AdminDrivers from "./Components/AdminDrivers";
+import MoverViewComplaints from "./Components/MoverViewComplaints";
+import PackersAddRating from "./Components/PackersAddRating";
+import PackerAddComplaints from "./Components/PackerAddComplaints";
+import AdminViewComplaints from "./Components/AdminViewComplaints";
 
 
 function App() {
@@ -83,6 +87,10 @@ function App() {
           <Route path="/mover_edit_drivers/:id" element={<MoverEditDriver/>}/>
           <Route path="/movers-view-order-details/:id" element={[<MoversNav/>,<MoverViewAndTrackOrder/>]}/>
 
+          <Route path="/movers-view-complaints" element={<MoverViewComplaints/>}/>
+          <Route path="/packer_add_review/:id" element={<PackersAddRating/>}/>
+          <Route path="/packer_add_complaint/:id" element={<PackerAddComplaints/>}/>
+          <Route path="/admin-view-complaints" element={<AdminViewComplaints/>}/>
         </Routes>
       </div>
       <Footer />
